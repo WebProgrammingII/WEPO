@@ -5,6 +5,6 @@ In this project we are going to create a simple React application for a company 
 We are going to expand on our project and introduce good practices when defining components in React. The expansions is to define PropTypes for all our components who receive props. Also make use of defaultProps where they make sense. Introduce a global user within the application. It can be hard-coded for now. The App should hold on to the user.
 
 ## Project 3
-We are going to expand on our project and create the NavigationBar which uses routing in the application. We are going to define three routes: News, Stocks, About. The main site should be News. NavigationBar should have it's tests defined before implementing the component.
+We are going to expand on our project and create the NavigationBar which uses routing in the application. We are going to define three routes: News, Top 10 Games, About. The main site should be News. NavigationBar should have it's tests defined before implementing the component.
 
-The components Stock and About are provided.
+The components Top 10 Games and About are provided.
