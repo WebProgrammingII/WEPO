@@ -1,2 +1,2 @@
-# WebProgrammingII
-Used for code examples and demonstrations in Web Programming II
+# WEPO
+Repository for all public code within the Web Programming II course
