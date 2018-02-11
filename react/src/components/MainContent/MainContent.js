@@ -5,32 +5,13 @@ import SearchBar from '../SearchBar/SearchBar';
 import Filter from '../Filter/Filter';
 
 class MainContent extends React.Component {
+    // Get news from newsService
     constructor(props) {
         super(props);
         this.state = {
             filter: '',
             categoryFilter: 'technology',
-            // Should have been retrieved from a server
-            news: [
-                {
-                    id: 1,
-                    title: 'Zombie apocalypse!',
-                    shortDescription: 'A zombie apocalypse has broken loose! All residents are encouraged to lock their doors shut!',
-                    category: 'world'
-                },
-                {
-                    id: 2,
-                    title: 'BitCoin has dropped!',
-                    shortDescription: 'BitCoin took a steep dip this morning going from $8000 to $100. Wall Street is in wreck.',
-                    category: 'financial'
-                },
-                {
-                    id: 3,
-                    title: 'PS5 has announced its debut',
-                    shortDescription: 'Sony has announced the new PS5! Tokyo goes wild!',
-                    category: 'technology'
-                }
-            ]
+            news: []
         };
     };
     onFilter(e) {
