@@ -7,4 +7,6 @@ We are going to expand on our project and introduce good practices when defining
 ## Project 3
 We are going to expand on our project and create the NavigationBar which uses routing in the application. Insert a logo to the navigation bar. We are going to define three routes: News, Top 10 Games, About. The main site should be News. NavigationBar should have it's tests defined before implementing the component.
 
+Also add dynamic links when a news item is pressed, it should return a detailed view.
+
 The components Top 10 Games and About are provided.
