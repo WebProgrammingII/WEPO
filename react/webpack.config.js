@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/App.js',
+    entry: ['babel-polyfill', './src/App.js'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
@@ -24,7 +24,6 @@ module.exports = {
         extensions: ['.js', '.jsx', '.less']
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
         compress: true,
         port: 8080,
         open: true,
