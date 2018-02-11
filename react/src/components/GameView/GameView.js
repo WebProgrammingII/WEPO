@@ -1,19 +1,17 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
-const GameView = ({ place, title, imageUrl, shortDescription }) => (
+const GameView = ({ place, name, imgSrc }) => (
     <div className="game-container">
-        <h3>#{place} {title}</h3>
-        <img src={imageUrl} />
-        <p>{shortDescription}</p>
+        <h3>#{place} {name}</h3>
+        <img src={imgSrc} />
     </div>
 );
 
 GameView.propTypes = {
     place: PropTypes.number,
-    title: PropTypes.string,
-    imageUrl: PropTypes.string,
-    shortDescription: PropTypes.string
+    name: PropTypes.string,
+    imgSrc: PropTypes.string
 };
 
 export default GameView;

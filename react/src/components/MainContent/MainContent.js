@@ -3,9 +3,12 @@ import ListView from '../ListView/ListView';
 import ListViewItem from '../ListViewItem/ListViewItem';
 import SearchBar from '../SearchBar/SearchBar';
 import Filter from '../Filter/Filter';
+import newsService from '../../services/newsService';
 
 class MainContent extends React.Component {
-    // Get news from newsService
+    componentDidMount() {
+        newsService.getNews().then((news) => { this.setState({ news }); });
+    }
     constructor(props) {
         super(props);
         this.state = {

@@ -1,23 +1,21 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
 import GameView from '../GameView/GameView';
+import gameService from '../../services/gameService';
 
-const TopGames = ({ games }) => {
-    const orderedGames = games.sort((a, b) => a.place > b.place);
-    return orderedGames.map((game) => (
-        <GameView key={game.place} {...game} />
-    ));
-};
-
-TopGames.propTypes = {
-    games: PropTypes.arrayOf(
-        PropTypes.shape({
-            title: PropTypes.string.isRequired,
-            imageUrl: PropTypes.string,
-            shortDescription: PropTypes.string,
-            place: PropTypes.number
-        })
-    )
+class TopGames extends React.Component {
+    componentDidMount() {
+        gameService.getGames().then(games => this.setState({ games: games.sort((a, b) => a.place > b.place) }));
+    }
+    constructor(props) {
+        super(props);
+        this.state = { games: [] };
+    }
+    render() {
+        const { games } = this.state;
+        return games.map((game) => (
+            <GameView key={game.id} {...game} />
+        ));
+    }
 };
 
 export default TopGames;
