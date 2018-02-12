@@ -9,7 +9,7 @@ describe('ChatWindow tests', () => {
     let mockSocketServer, mockSocket;
 
     beforeEach(() => {
-        mockSocketServer = new Server('http://localhost:3000');
+        mockSocketServer = new Server('http://localhost:3050');
 
         mockSocketServer.on('connection', socket => {
             socket.on('msg', message => {
@@ -17,7 +17,7 @@ describe('ChatWindow tests', () => {
             });
         });
 
-        mockSocket = SocketIO.connect('http://localhost:3000');
+        mockSocket = SocketIO.connect('http://localhost:3050');
 
         jest.runOnlyPendingTimers();
     });
