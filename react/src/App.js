@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MainContent from './components/MainContent/MainContent';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import '../styles/site.less';
 
@@ -31,4 +32,4 @@ App.childContextTypes = {
 
 // Define childContextTypes and use contextTypes for navigation bar
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Router><App /></Router>, document.getElementById('app'));
