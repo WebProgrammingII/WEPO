@@ -1,0 +1,36 @@
+body {
+    .container {
+        width: 768px;
+        margin: 0 auto;
+        .chat-window {
+            position: relative;
+            height: 480px;
+            width: 640px;
+            background-color: rgba(155, 155, 155, .1);
+            box-shadow: 2px 2px 10px rgba(155, 155, 155, .2);
+
+            .input-box {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 30px;
+                .input {
+                    &.input-big {
+                        width: 89%;
+                        font-size: 1.2em;
+                    }
+                }
+                .btn {
+                    border-radius: 0px;
+                    font-size: 1.2em;
+                    background-color: rgba(50, 200, 50, .6);
+                    color: white;
+                }
+            }
+        }
+    }
+    .pull-right {
+        float: right;
+    }
+}
