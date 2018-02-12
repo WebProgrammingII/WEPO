@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
 const Filter = ({ onFilter, selected }) => {
     return (
@@ -11,6 +12,13 @@ const Filter = ({ onFilter, selected }) => {
             <input type="radio" name="radio" checked={'technology' === selected} onChange={() => onFilter('technology')} />
         </div>
     );
+};
+
+Filter.propTypes = {
+    // When radio button selected, this function is triggered for filtering
+    onFilter: PropTypes.func.isRequired,
+    // Determines what radio button should be selected
+    selected: PropTypes.string
 };
 
 export default Filter;

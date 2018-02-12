@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
 const SearchBar = ({ onFilter }) => {
     return (
@@ -6,6 +7,8 @@ const SearchBar = ({ onFilter }) => {
     );
 };
 
-// Add propTypes
+SearchBar.propTypes = {
+    onFilter: PropTypes.func.isRequired
+};
 
 export default SearchBar;
