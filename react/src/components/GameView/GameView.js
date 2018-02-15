@@ -2,7 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 
 const GameView = ({ place, name, imgSrc }) => (
-    <div className="game-container">
+    <div className="details-container game">
         <h3>#{place} {name}</h3>
         <img src={imgSrc} />
     </div>
