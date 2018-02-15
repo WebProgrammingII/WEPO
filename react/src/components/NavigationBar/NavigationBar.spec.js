@@ -15,6 +15,11 @@ describe('NavigationBar tests', () => {
         expect(stub.calledOnce).toBe(true);
     });
 
+    it('should contain links', () => {
+        const component = shallow(<NavigationBar />);
+        expect(component.find('.nav-link').length).toBe(3);
+    });
+
     afterEach(() => {
         console.error.reset();
     })
