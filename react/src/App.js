@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MainContent from './components/MainContent/MainContent';
+import NavigationBar from './components/NavigationBar/NavigationBar';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import '../styles/site.less';
 
+// logo = https://www.spreadshirt.es/image-server/v1/mp/designs/15527121,width=178,height=178/pro-gamer.png
 class App extends React.Component {
     getChildContext() {
         return {
