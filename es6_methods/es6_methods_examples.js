@@ -2,13 +2,23 @@
     ES6 methods examples
 **/
 
+var namedExport = require('./named_exports');
+var Service = require('./default_exports');
+
 // 1. Define a function which shows how const and let are block scoped, vs. var is function scoped
+if (true) {
+  const myVar = 1;
+  console.log(myVar);
+}
 
 // 2. Import two methods from named exports sum and divide
 
 // 3. Import a service as a default export
 
 // 4. Use Object.assign() with two params
+let obj = {};
+Object.assign(obj, { x: 1, y: 2 });
+console.log(obj);
 
 // 5. Use Object.assign() with three params
 
