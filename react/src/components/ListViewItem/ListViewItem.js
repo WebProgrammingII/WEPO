@@ -1,11 +1,12 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const ListViewItem = ({ info }) => {
-    const { title, shortDescription, category } = info;
+    const { id, title, shortDescription, category } = info;
     return (
         <li className="list-view-item">
-            <h3>{title}</h3>
+            <h3><Link to={`/${id}`}>{title}</Link></h3>
             <p>{shortDescription}</p>
             <p>{category}</p>
         </li>

@@ -5,7 +5,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import Filter from '../Filter/Filter';
 import newsService from '../../services/newsService';
 
-class MainContent extends React.Component {
+class News extends React.Component {
     componentDidMount() {
         newsService.getNews().then((news) => { this.setState({ news }); });
     }
@@ -37,4 +37,4 @@ class MainContent extends React.Component {
     };
 };
 
-export default MainContent;
+export default News;

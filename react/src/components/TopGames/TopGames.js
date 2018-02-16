@@ -12,9 +12,13 @@ class TopGames extends React.Component {
     }
     render() {
         const { games } = this.state;
-        return games.map((game) => (
+        return (
+          <div className="container">
+          {games.map((game) => (
             <GameView key={game.id} {...game} />
-        ));
+          ))}
+        </div>
+      );
     }
 };
 
