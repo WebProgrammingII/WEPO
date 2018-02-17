@@ -8,17 +8,17 @@ class TopGames extends React.Component {
     }
     constructor(props) {
         super(props);
-        this.state = { games: [] };
+        this.state = { games: [], isModalOpen: false };
     }
     render() {
-        const { games } = this.state;
+        const { games, isModalOpen } = this.state;
         return (
-          <div className="container">
-          {games.map((game) => (
-            <GameView key={game.id} {...game} />
-          ))}
-        </div>
-      );
+            <div className="container">
+                {games.map((game) => (
+                    <GameView key={game.id} {...game} openModal={() => this.setState({ isModalOpen: !isModalOpen })} isModalOpen={isModalOpen} />
+                ))}
+            </div>
+        );
     }
 };
 

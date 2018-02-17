@@ -5,6 +5,7 @@ import TopGames from './components/TopGames/TopGames';
 import About from './components/About/About';
 import News from './components/News/News';
 import NewsItem from './components/NewsItem/NewsItem';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import '../styles/site.less';
@@ -21,18 +22,20 @@ class App extends React.Component {
     }
     render() {
         return (
-            <div>
-                <NavigationBar logoImageUrl="https://www.spreadshirt.es/image-server/v1/mp/designs/15527121,width=178,height=178/pro-gamer.png" />
-                <Switch>
-                  <Route exact path="/news" render={() => {
-                    return <Redirect to="/" />;
-                  }} />
-                  <Route exact path="/" component={News} />
-                  <Route path="/:newsId" component={NewsItem} />
-                  <Route path="/topgames" component={TopGames} />
-                  <Route path="/about" component={About} />
-                </Switch>
-            </div>
+            <MuiThemeProvider>
+                <div>
+                    <NavigationBar logoImageUrl="https://www.spreadshirt.es/image-server/v1/mp/designs/15527121,width=178,height=178/pro-gamer.png" />
+                    <Switch>
+                        <Route path="/topgames" component={TopGames} />
+                        <Route path="/about" component={About} />
+                        <Route exact path="/news" render={() => {
+                            return <Redirect to="/" />;
+                        }} />
+                        <Route exact path="/" component={News} />
+                        <Route path="/:newsId" component={NewsItem} />
+                    </Switch>
+                </div>
+            </MuiThemeProvider>
         );
     };
 }
