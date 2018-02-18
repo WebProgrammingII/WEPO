@@ -11,6 +11,11 @@ body {
         margin: 0 auto;
         background-color: rgba(155, 155, 155, 0.5);
         color: white;
+        &:disabled {
+            background-color: rgba(155, 155, 155, 0.2);
+            color: rgba(155, 155, 155, 0.2);
+            cursor: not-allowed;
+        }
     }
     .navbar {
         position: fixed;
@@ -97,5 +102,14 @@ body {
         font-weight: bold;
         color: rgb(200, 50, 50);
         padding: 10px 0px;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .select {
+        font-size: 1.2em;
+        display: block;
+        width: 100%;
+        margin: 10px 0px;
     }
 }
