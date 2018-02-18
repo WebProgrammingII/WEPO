@@ -4,18 +4,18 @@
 import fetch from 'fetch-jsonp';
 
 const endpoint = 'http://battuta.medunes.net/api';
-const key = 'd1e03e403468f6a5ac65f9584df4bcd5';
+const key = 'a294141a66d896a3acd683b7c6bc8017';
 
 const countryService = () => {
     return {
-        getCountries: () => {
-            return fetch(`${endpoint}/country/all/?key=${key}`).then(resp => resp.json()).then(d => d);
+        getCountries: (format) => {
+            return fetch(`${endpoint}/country/all/?key=${key}`).then(resp => resp.json()).then(countries => countries.map(c => format(c)));
         },
-        getRegions: (countryCode = 'is') => {
-            return fetch(`${endpoint}/region/${countryCode}/all/?key=${key}`).then(resp => resp.json()).then(d => d);
+        getRegions: (countryCode = 'is', format) => {
+            return fetch(`${endpoint}/region/${countryCode}/all/?key=${key}`).then(resp => resp.json()).then(regions => regions.map(r => format(r)));
         },
-        getCities: (countryCode = 'is', regionName = '') => {
-            return fetch(`${endpoint}/city/${countryCode}/search/?region=${regionName}&key=${key}`).then(resp => resp.json()).then(d => d);
+        getCities: (countryCode = 'is', regionName = '', format) => {
+            return fetch(`${endpoint}/city/${countryCode}/search/?region=${regionName}&key=${key}`).then(resp => resp.json()).then(cities => cities.map(c => format(c)));
         }
     };
 };
