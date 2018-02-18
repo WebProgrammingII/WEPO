@@ -13,7 +13,7 @@ class TopGames extends React.Component {
     render() {
         const { games, isModalOpen } = this.state;
         return (
-            <div className="container">
+            <div>
                 {games.map((game) => (
                     <GameView key={game.id} {...game} openModal={() => this.setState({ isModalOpen: !isModalOpen })} isModalOpen={isModalOpen} />
                 ))}

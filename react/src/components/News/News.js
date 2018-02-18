@@ -26,7 +26,7 @@ class News extends React.Component {
         const { news, filter, categoryFilter } = this.state;
         const filteredNews = news.filter(n => n.title.toLowerCase().includes(filter.toLowerCase()) && n.category === categoryFilter);
         return (
-            <div className="container">
+            <div>
                 <SearchBar onFilter={this.onFilter.bind(this)} />
                 <Filter onFilter={(category) => { this.setState({ categoryFilter: category }) }} selected={categoryFilter} />
                 <ListView>
