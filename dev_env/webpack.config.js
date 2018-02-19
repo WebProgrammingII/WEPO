@@ -6,3 +6,23 @@
 
     Plug eslint-loader in to the mix and see some coding errors!
 **/
+
+const path = require('path');
+const webpack = require('webpack');
+
+module.exports = {
+    entry: './src/entry1.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
+    },
+    module: {
+        rules: [
+            { test: /\.js$/, exclude: /node_modules/, use: 'eslint-loader' },
+            { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' }
+        ]
+    },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin()
+    ]
+};

@@ -20,6 +20,10 @@ const NavigationBar = ({ logoImageUrl }) => {
                     activeClassName="active"
                     className="nav-link">Top 10 Games</NavLink>
                 <NavLink
+                    to="/signup"
+                    activeClassName="active"
+                    className="nav-link">Signup now!</NavLink>
+                <NavLink
                     to="/about"
                     activeClassName="active"
                     className="nav-link">About us</NavLink>

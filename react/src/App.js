@@ -5,6 +5,7 @@ import TopGames from './components/TopGames/TopGames';
 import About from './components/About/About';
 import News from './components/News/News';
 import NewsItem from './components/NewsItem/NewsItem';
+import SignupForm from './components/SignupForm/SignupForm';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
@@ -29,6 +30,7 @@ class App extends React.Component {
                         <Switch>
                             <Route path="/topgames" component={TopGames} />
                             <Route path="/about" component={About} />
+                            <Route path="/signup" component={SignupForm} />
                             <Route exact path="/news" render={() => {
                                 return <Redirect to="/" />;
                             }} />

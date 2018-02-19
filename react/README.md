@@ -20,6 +20,6 @@ The data to provide is the following:
     * Full name
     * Telephone
     * Email
-    * Country, region and city
     * Address
+    * Country, region and city
     * Submit button
