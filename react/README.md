@@ -20,6 +20,9 @@ The data to provide is the following:
     * Full name
     * Telephone
     * Email
-    * Address
     * Country, region and city
+    * Address
     * Submit button
+
+## Project 5
+A new feature has emerged the guys at Pro Gamers need to have! They want to be able to edit your profile: name and photo. When the name and photo are successfully submitted, a toaster should be shown and the name and the name and photo should appear in the footer of the site.
