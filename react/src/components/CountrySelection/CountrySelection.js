@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import RemoteSelectItem from '../RemoteSelectItem/RemoteSelectItem';
+import countryService from '../../services/countryService';
 
 class CountrySelection extends React.Component {
     constructor(props) {
@@ -20,23 +21,31 @@ class CountrySelection extends React.Component {
                     value={country}
                     name="country"
                     onSelect={e => {
-                        this.setState({ region: '', city: '' })
+                        this.setState({ region: '', city: '', country: e.target.value });
                         onCountrySelection(e);
                     }}
-                    defaultOption="-- Pick a country --" />
+                    defaultOption="-- Pick a country --"
+                    populationMethod={countryService.getCountries.bind(null, val => { return { value: val.code, display: val.name } })} />
                 <RemoteSelectItem
                     value={region}
                     name="region"
                     onSelect={e => {
-                        this.setState({ city: '' })
+                        this.setState({ city: '', region: e.target.value });
                         onCountrySelection(e);
                     }}
-                    defaultOption="-- Pick a region --" />
+                    defaultOption="-- Pick a region --"
+                    populationMethod={countryService.getRegions.bind(null, country, val => { return { value: val.region, display: val.region } })}
+                    disabled={country === ''} />
                 <RemoteSelectItem
                     value={city}
                     name="city"
-                    onSelect={onCountrySelection}
-                    defaultOption="-- Pick a city --" />
+                    onSelect={(e) => {
+                        this.setState({ city: e.target.value });
+                        onCountrySelection(e);
+                    }}
+                    defaultOption="-- Pick a city --"
+                    populationMethod={countryService.getCities.bind(null, country, region, val => { return { value: val.city, display: val.city } })}
+                    disabled={ region === '' } />
             </div>
         );
     }
