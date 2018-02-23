@@ -57,6 +57,7 @@ body {
         width: 768px;
         margin: 0 auto;
         margin-top: 150px;
+        margin-bottom: 100px;
         .list-view {
             list-style: none;
             padding-left: 0;
@@ -90,6 +91,11 @@ body {
         background-color: rgba(100, 100, 200, 0.5);
         margin-bottom: 10px;
         width: 250px;
+        img {
+            width: 200px;
+            display: block;
+            margin: 0 auto;
+        }
     }
     .input {
         width: 100%;
@@ -124,5 +130,32 @@ body {
         display: block;
         width: 100%;
         margin: 10px 0px;
+    }
+    .footer {
+        height: 100px;
+        padding: 10px;
+        background-color: rgba(155, 155, 155, .6);
+        border-top: solid 6px rgba(155, 155, 155, .8);
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 9;
+        .footer-section {
+            margin-left: 20px;
+            &.image-section {
+                img {
+                    height: 80px;
+                }
+            }
+            &.name-section {
+                font-size: 1.5em;
+                font-weight: bold;
+                color: white;
+            }
+        }
     }
 }
