@@ -24,6 +24,10 @@ const NavigationBar = ({ logoImageUrl }) => {
                     activeClassName="active"
                     className="nav-link">Signup now!</NavLink>
                 <NavLink
+                    to="/profile"
+                    activeClassName="active"
+                    className="nav-link">Change profile</NavLink>
+                <NavLink
                     to="/about"
                     activeClassName="active"
                     className="nav-link">About us</NavLink>

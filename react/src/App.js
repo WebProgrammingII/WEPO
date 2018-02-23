@@ -6,6 +6,9 @@ import About from './components/About/About';
 import News from './components/News/News';
 import NewsItem from './components/NewsItem/NewsItem';
 import SignupForm from './components/SignupForm/SignupForm';
+import Profile from './components/Profile/Profile';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
@@ -31,6 +34,7 @@ class App extends React.Component {
                             <Route path="/topgames" component={TopGames} />
                             <Route path="/about" component={About} />
                             <Route path="/signup" component={SignupForm} />
+                            <Route path="/profile" component={Profile} />
                             <Route exact path="/news" render={() => {
                                 return <Redirect to="/" />;
                             }} />
@@ -53,4 +57,4 @@ App.childContextTypes = {
 
 // Define childContextTypes and use contextTypes for navigation bar
 
-ReactDOM.render(<Router><App /></Router>, document.getElementById('app'));
+ReactDOM.render(<Provider store={createStore()}><Router><App /></Router></Provider>, document.getElementById('app'));

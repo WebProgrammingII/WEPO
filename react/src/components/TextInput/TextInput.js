@@ -19,7 +19,8 @@ TextInput.propTypes = {
 };
 
 TextInput.defaultProps = {
-    type: 'text'
+    type: 'text',
+    validate: () => ''
 };
 
 export default TextInput;
