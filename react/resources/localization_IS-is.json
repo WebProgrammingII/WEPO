@@ -4,7 +4,8 @@
         "topGames": "Topp 10 leikir",
         "signup": "Skrá sig!",
         "changeProfile": "Breyta prófíl",
-        "about": "Um okkur"
+        "about": "Um okkur",
+        "logout": "Skrá út"
     },
     "headings": {
         "signupNow": "Skrá sig!",

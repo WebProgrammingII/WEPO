@@ -4,7 +4,8 @@
         "topGames": "Top 10 Games",
         "signup": "Signup now!",
         "changeProfile": "Change profile",
-        "about": "About us"
+        "about": "About us",
+        "logout": "Log out"
     },
     "headings": {
         "signupNow": "Signup now!",
