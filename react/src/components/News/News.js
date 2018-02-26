@@ -4,10 +4,14 @@ import ListViewItem from '../ListViewItem/ListViewItem';
 import SearchBar from '../SearchBar/SearchBar';
 import Filter from '../Filter/Filter';
 import newsService from '../../services/newsService';
+import { connect } from 'react-redux';
+import { getUserSession } from '../../actions/actions.js';
 
 class News extends React.Component {
     componentDidMount() {
         newsService.getNews().then((news) => { this.setState({ news }); });
+        const { getUserSession } = this.props;
+        getUserSession();
     }
     constructor(props) {
         super(props);
@@ -37,4 +41,4 @@ class News extends React.Component {
     };
 };
 
-export default News;
+export default connect(null, { getUserSession })(News);

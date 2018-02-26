@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import NavigationBarLinkWrapper from '../NavigationBarLinkWrapper/NavigationBarLinkWrapper';
+import SelectLanguage from '../SelectLanguage/SelectLanguage';
 
 const NavigationBar = ({ logoImageUrl, language }) => {
     const { nav } = language;
@@ -33,6 +34,7 @@ const NavigationBar = ({ logoImageUrl, language }) => {
                     to="/about"
                     activeClassName="active"
                     className="nav-link">{nav.about}</NavLink>
+                <SelectLanguage />
             </NavigationBarLinkWrapper>
         </nav>
     );
