@@ -7,8 +7,10 @@ import News from './components/News/News';
 import NewsItem from './components/NewsItem/NewsItem';
 import SignupForm from './components/SignupForm/SignupForm';
 import Profile from './components/Profile/Profile';
+import Footer from './components/Footer/Footer';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import reducers from './reducers/reducers';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
@@ -42,6 +44,7 @@ class App extends React.Component {
                             <Route path="/:newsId" component={NewsItem} />
                         </Switch>
                     </div>
+                    <Footer />
                 </div>
             </MuiThemeProvider>
         );
@@ -57,4 +60,4 @@ App.childContextTypes = {
 
 // Define childContextTypes and use contextTypes for navigation bar
 
-ReactDOM.render(<Provider store={createStore()}><Router><App /></Router></Provider>, document.getElementById('app'));
+ReactDOM.render(<Provider store={createStore(reducers)}><Router><App /></Router></Provider>, document.getElementById('app'));

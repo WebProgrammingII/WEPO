@@ -1,9 +1,11 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 import NavigationBarLinkWrapper from '../NavigationBarLinkWrapper/NavigationBarLinkWrapper';
 
-const NavigationBar = ({ logoImageUrl }) => {
+const NavigationBar = ({ logoImageUrl, language }) => {
+    const { nav } = language;
     return (
         <nav className="navbar">
             <div className="nav-logo">
@@ -14,23 +16,23 @@ const NavigationBar = ({ logoImageUrl }) => {
                     exact
                     to="/"
                     activeClassName="active"
-                    className="nav-link">News</NavLink>
+                    className="nav-link">{nav.news}</NavLink>
                 <NavLink
                     to="/topgames"
                     activeClassName="active"
-                    className="nav-link">Top 10 Games</NavLink>
+                    className="nav-link">{nav.topGames}</NavLink>
                 <NavLink
                     to="/signup"
                     activeClassName="active"
-                    className="nav-link">Signup now!</NavLink>
+                    className="nav-link">{nav.signup}</NavLink>
                 <NavLink
                     to="/profile"
                     activeClassName="active"
-                    className="nav-link">Change profile</NavLink>
+                    className="nav-link">{nav.changeProfile}</NavLink>
                 <NavLink
                     to="/about"
                     activeClassName="active"
-                    className="nav-link">About us</NavLink>
+                    className="nav-link">{nav.about}</NavLink>
             </NavigationBarLinkWrapper>
         </nav>
     );
@@ -47,4 +49,4 @@ NavigationBar.propTypes = {
     logoImageUrl: PropTypes.string.isRequired
 };
 
-export default NavigationBar;
+export default connect(({ language }) => { return { language }; })(NavigationBar);
