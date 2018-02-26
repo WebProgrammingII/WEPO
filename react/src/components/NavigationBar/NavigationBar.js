@@ -51,4 +51,5 @@ NavigationBar.propTypes = {
     logoImageUrl: PropTypes.string.isRequired
 };
 
-export default connect(({ language }) => { return { language }; })(NavigationBar);
+// Fix for react-router-dom, known bug with NavLink
+export default connect(({ language }) => { return { language }; }, null, null, { pure: false })(NavigationBar);
