@@ -21,7 +21,7 @@ npm install react-redux redux and start setting up Redux for this project.
 
     7. Let's console.log the number inside the action creator and inside the reducer
 
-    8. Now let's make the Header a container component as well using Redux. Implement a function called mapStateToProps which takes is as a first argument the store state and return an empty object. Add this function as the first parameter to the connect function. Console.log the state
+    8. Now let's make the Header a container component as well using Redux. Implement a function called mapStateToProps which takes as a first argument the store state and return an empty object. Add this function as the first parameter to the connect function. Console.log the state
 
     9. Instead of returning an empty object in the Header return an object containing the store state.
 
@@ -49,7 +49,7 @@ Let's rename our reducer to counterReducer and create another called userReducer
 
     6. Fix the error by changing how the state is accessed
 
-    7. Create a new component called Name which should be rendered below Counter. The name component should be a stateful component and contain a name and age within the state and implement a form containing two input tags for the name and age and update the state accordingly
+    7. Create a new component called Name which should be rendered below Counter. The Name component should be a stateful component and contain a name and age within the state and implement a form containing two input tags for the name and age and update the state accordingly
 
     8. When the submit button in the Name component is pressed it should dispatch the new changeUser action
 
