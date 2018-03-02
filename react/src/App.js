@@ -7,8 +7,12 @@ import News from './components/News/News';
 import NewsItem from './components/NewsItem/NewsItem';
 import SignupForm from './components/SignupForm/SignupForm';
 import Profile from './components/Profile/Profile';
+import Login from './components/Login/Login';
+import Footer from './components/Footer/Footer';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import reducers from './reducers/reducers';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
@@ -35,6 +39,7 @@ class App extends React.Component {
                             <Route path="/about" component={About} />
                             <Route path="/signup" component={SignupForm} />
                             <Route path="/profile" component={Profile} />
+                            <Route path="/login" component={Login} />
                             <Route exact path="/news" render={() => {
                                 return <Redirect to="/" />;
                             }} />
@@ -42,6 +47,7 @@ class App extends React.Component {
                             <Route path="/:newsId" component={NewsItem} />
                         </Switch>
                     </div>
+                    <Footer />
                 </div>
             </MuiThemeProvider>
         );
@@ -57,4 +63,4 @@ App.childContextTypes = {
 
 // Define childContextTypes and use contextTypes for navigation bar
 
-ReactDOM.render(<Provider store={createStore()}><Router><App /></Router></Provider>, document.getElementById('app'));
+ReactDOM.render(<Provider store={createStore(reducers, applyMiddleware(thunk))}><Router><App /></Router></Provider>, document.getElementById('app'));

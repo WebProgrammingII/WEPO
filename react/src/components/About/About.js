@@ -1,12 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const About = () => {
+const About = ({ language }) => {
+    const { headings } = language;
     return (
         <div>
-            <h2>About us</h2>
-            <p>We are Pro Gamers! We dedicate our life to provide you with gaming news and stuff.</p>
+            <h2>{headings.aboutUs}</h2>
+            <p>{language.static.aboutUs}</p>
         </div>
     )
 };
 
-export default About;
+export default connect(({ language }) => { return { language }; })(About);

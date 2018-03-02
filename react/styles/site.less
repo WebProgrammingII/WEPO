@@ -1,7 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
 body {
+    font-family: 'Roboto';
     padding: 0;
     margin: 0;
     color: #7C7C7C;
+    .third-party-login-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        .third-party-login {
+            &:hover {
+                cursor: pointer;
+            }
+            img {
+                width: 200px;
+            }
+        }
+    }
     .spacer {
         margin-top: 30px !important;
     }
@@ -52,11 +69,29 @@ body {
                 font-size: 1.2em;
             }
         }
+        .language-wrapper {
+            float: right;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 100px;
+            .flag-icon {
+                &:hover {
+                    cursor: pointer;
+                }
+                margin: 0 5px;
+                img {
+                    width: 25px;
+                }
+            }
+        }
     }
     .container {
         width: 768px;
         margin: 0 auto;
         margin-top: 150px;
+        margin-bottom: 100px;
         .list-view {
             list-style: none;
             padding-left: 0;
@@ -90,6 +125,11 @@ body {
         background-color: rgba(100, 100, 200, 0.5);
         margin-bottom: 10px;
         width: 250px;
+        img {
+            width: 200px;
+            display: block;
+            margin: 0 auto;
+        }
     }
     .input {
         width: 100%;
@@ -124,5 +164,32 @@ body {
         display: block;
         width: 100%;
         margin: 10px 0px;
+    }
+    .footer {
+        height: 100px;
+        padding: 10px;
+        background-color: rgba(155, 155, 155, .6);
+        border-top: solid 6px rgba(155, 155, 155, .8);
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 9;
+        .footer-section {
+            margin-left: 20px;
+            &.image-section {
+                img {
+                    height: 80px;
+                }
+            }
+            &.name-section {
+                font-size: 1.5em;
+                font-weight: bold;
+                color: white;
+            }
+        }
     }
 }
