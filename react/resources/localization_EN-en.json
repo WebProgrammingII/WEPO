@@ -1,0 +1,32 @@
+{
+    "nav": {
+        "news": "News",
+        "topGames": "Top 10 Games",
+        "signup": "Signup now!",
+        "changeProfile": "Change profile",
+        "about": "About us",
+        "logout": "Log out"
+    },
+    "headings": {
+        "signupNow": "Signup now!",
+        "editProfile": "Edit profile",
+        "aboutUs": "About us"
+    },
+    "formValidation": {
+        "fullNameReq": "Full name is required",
+        "telephoneReq": "Telephone is required",
+        "emailFormat": "Email is not correctly formatted",
+        "addressReq": "Address is required"
+    },
+    "select": {
+        "countryOption": "-- Pick a country --",
+        "regionOption": "-- Pick a region --",
+        "cityOption": "-- Pick a city --"
+    },
+    "buttons": {
+        "submit": "Submit"
+    },
+    "static": {
+        "aboutUs": "We are Pro Gamers! We dedicate our life to provide you with gaming news and stuff."
+    }
+}

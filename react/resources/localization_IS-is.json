@@ -1,0 +1,32 @@
+{
+    "nav": {
+        "news": "Fréttir",
+        "topGames": "Topp 10 leikir",
+        "signup": "Skrá sig!",
+        "changeProfile": "Breyta prófíl",
+        "about": "Um okkur",
+        "logout": "Skrá út"
+    },
+    "headings": {
+        "signupNow": "Skrá sig!",
+        "editProfile": "Breyta prófíl",
+        "aboutUs": "Um okkur"
+    },
+    "formValidation": {
+        "fullNameReq": "Fullt nafn er krafa",
+        "telephoneReq": "Símanúmer er krafa",
+        "emailFormat": "Netfang er ekki á réttu formi",
+        "addressReq": "Heimilisfang er krafa"
+    },
+    "select": {
+        "countryOption": "-- Veldu land --",
+        "regionOption": "-- Veldu svæði --",
+        "cityOption": "-- Veldu borg --"
+    },
+    "buttons": {
+        "submit": "Senda inn"
+    },
+    "static": {
+        "aboutUs": "Við erum Pro Gamers! Við tileinkum lífi okkar í að útvega þér allar þær leikjafréttir og annað sem tengist leikjum fyrir þig!"
+    }
+}
