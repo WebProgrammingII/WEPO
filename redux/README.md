@@ -66,11 +66,11 @@ Let's create another reducer called weatherReducer. He should have an initial st
 
     1. weatherReducer should accept GET_CURRENT_DEGREE which accepts a payload, which is a single number and should return this number as the new state
 
-    2. Create an async action creator called getCurrentDegree which contains no arguments and it calls a weatherService.getCurrentDegree which returns a promise, which should be resolved by using then, within that function it should dispatch getCurrentDegreeSuccess with the data received from the weatherService.getCurrentDegree function
+    2. Create an async action creator called getCurrentDegree which contains no arguments and it calls a function getCurrentDegree in the weatherService which returns a promise, which should be resolved by using then(), within that function it should dispatch getCurrentDegreeSuccess with the data received from the weatherService.getCurrentDegree function
 
     3. Let's create an action creator called getCurrentDegreeSuccess which contains a single argument called currentDegree and returns an object
         {
-            type: GET_CURRENT_DEGREE,
+            type: 'GET_CURRENT_DEGREE',
             payload: currentDegree
         }
 
