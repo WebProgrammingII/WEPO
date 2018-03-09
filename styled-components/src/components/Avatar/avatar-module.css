@@ -1,0 +1,30 @@
+.avatar {
+    display: inline-block;
+    margin: 10px;
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 50%;
+    transition: transform 1s ease-in;
+}
+
+.avatar:hover {
+    transform: rotate(360deg);
+}
+
+.avatar-small {
+    composes: avatar;
+    width: 100px;
+    height: 100px;
+}
+
+.avatar-medium {
+    composes: avatar;
+    width: 200px;
+    height: 200px;
+}
+
+.avatar-large {
+    composes: avatar;
+    width: 300px;
+    height: 300px;
+}
