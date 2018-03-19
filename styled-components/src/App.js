@@ -1,63 +1,48 @@
 import React from 'react';
-import StyledComponents from './components/StyledComponents/StyledComponents';
-import { ThemeProvider } from 'styled-components';
+import {Alert, Sunset, Modal} from 'al-infinitymodules';
 import './App.css';
 
-const { Square, Rectangle, CurvedSquare, Button, BigButton, Yoyo, MobileMenu } = StyledComponents;
-
 class App extends React.Component {
+	componentDidMount() {
+		setInterval(() => {
+			const { degree } = this.state;
+			this.setState({ degree: degree === 180 ? 0 : degree + 1 })
+		}, 30);
+	}
+	constructor(props) {
+		super(props);
+		this.state = {
+			isModalOpen: false,
+			degree: 0
+		};
+	}
 	render() {
-		return (
-			<ThemeProvider theme={{
-				baseWidth: 200,
-				baseHeight: 200,
-				baseColor: 'gray',
-				successColor: 'green',
-				warningColor: 'orange',
-				dangerColor: 'red'
-			}}>
-	            <div>
-					<h1>Styled components</h1>
-					<hr/>
-					<div>
-						<h3>Square</h3>
-						<Square />
-					</div>
-					<div>
-						<h3>Rectangle</h3>
-						<Rectangle />
-						<Rectangle height={200} width={200} />
-						<Rectangle height={300} width={100} />
-					</div>
-					<div>
-						<h3>CurvedSquare</h3>
-						<CurvedSquare />
-					</div>
-					<div>
-						<h3>Button</h3>
-						<Button onClick={() => {}}>Default Btn</Button>
-						<Button type="success" onClick={() => {}}>Success Btn</Button>
-						<Button type="warning" onClick={() => {}}>Warning Btn</Button>
-						<Button type="danger" onClick={() => {}}>Danger Btn</Button>
-					</div>
-					<div>
-						<h3>BigButton</h3>
-						<BigButton onClick={() => {}}>Default Btn</BigButton>
-						<BigButton type="success" onClick={() => {}}>Success Btn</BigButton>
-						<BigButton type="warning" onClick={() => {}}>Warning Btn</BigButton>
-						<BigButton type="danger" onClick={() => {}}>Danger Btn</BigButton>
-					</div>
-					<div>
-						<h3>Yoyo</h3>
-
-					</div>
-					<div>
-						<h3>MobileMenu</h3>
-						<MobileMenu />
-					</div>
-				</div>
-			</ThemeProvider>
-        );
+		const { isModalOpen, degree } = this.state;
+		return (<div>
+			<Alert type="info">
+				<Alert.Title>Title</Alert.Title>
+				<Alert.Text>Text</Alert.Text>
+			</Alert>
+			<Alert type="success">
+				<Alert.Title>Title</Alert.Title>
+				<Alert.Text>Text</Alert.Text>
+			</Alert>
+			<Alert type="warning">
+				<Alert.Title>Title</Alert.Title>
+				<Alert.Text>Text</Alert.Text>
+			</Alert>
+			<Alert type="danger">
+				<Alert.Title>Title</Alert.Title>
+				<Alert.Text>Text</Alert.Text>
+			</Alert>
+			<Sunset degree={degree}/>
+			<button onClick={() => this.setState({isModalOpen: true})}>Open Modal!</button>
+			<Modal isOpen={isModalOpen} onClose={() => this.setState({isModalOpen: false})}>
+				<Modal.Title>Title</Modal.Title>
+				<Modal.Body>Body</Modal.Body>
+				<Modal.Footer></Modal.Footer>
+			</Modal>
+		</div>);
 	}
 }
 

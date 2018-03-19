@@ -6,6 +6,7 @@ import Filter from '../Filter/Filter';
 import newsService from '../../services/newsService';
 import { connect } from 'react-redux';
 import { getUserSession } from '../../actions/actions.js';
+import { Alert } from 'al-infinitymodules';
 
 class News extends React.Component {
     componentDidMount() {
@@ -31,6 +32,10 @@ class News extends React.Component {
         const filteredNews = news.filter(n => n.title.toLowerCase().includes(filter.toLowerCase()) && n.category === categoryFilter);
         return (
             <div>
+                <Alert type="info">
+                    <Alert.Title>Info!</Alert.Title>
+                    <Alert.Text>You can search with the search bar</Alert.Text>
+                </Alert>
                 <SearchBar onFilter={this.onFilter.bind(this)} />
                 <Filter onFilter={(category) => { this.setState({ categoryFilter: category }) }} selected={categoryFilter} />
                 <ListView>

@@ -35,6 +35,7 @@
     "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
+    "al-infinitymodules": "^0.9.0",
     "babel-polyfill": "^6.26.0",
     "fetch-jsonp": "^1.1.3",
     "history": "^4.7.2",
