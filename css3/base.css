@@ -1,3 +1,22 @@
 body {
     padding: 100px;
 }
+
+a {
+    display: block;
+    font-size: 24px;
+}
+
+a[href$="pdf"]::before {
+    font-family: 'FontAwesome';
+    content: '\f1c1';
+    margin-right: 5px;
+    color: red;
+}
+
+a[href*="facebook"]::before {
+    font-family: 'FontAwesome';
+    content: '\f082';
+    margin-right: 5px;
+    color: blue;
+}

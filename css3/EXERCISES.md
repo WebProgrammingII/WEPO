@@ -79,7 +79,7 @@
     3. Play around with second radius
 
 ## Box-sizing
-    1. Let's create two div's both with padding: 10px, border: solid 10px black, margin: 10px. Let's make them with a different background-color and different classes
+    1. Let's create two div's both with padding: 20px, border: solid 20px black, margin: 20px. Let's make them with a different background-color and different classes
     2. Check their sizes in the browser
     3. Let's change the box-sizing property to content-box for the former and border-box for the latter
     4. Let's see them now in the browser
@@ -93,7 +93,7 @@
 
 ## Selectors
     1. Let's create four paragraphs, four divs and five anchors
-    2. Let's make two anchors be facebook links and two anchors be .pdf documents and one a mailto address
+    2. Let's make two anchors facebook links and two anchors .pdf documents and one a mailto address
     3. Let's add a title attribute to four paragraphs
     4. Let's add data-content to one div with the data "my own unicorn"
     5. Add a PDF icon before each anchor ending with .pdf
