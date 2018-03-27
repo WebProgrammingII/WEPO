@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 300px;
+    width: 300px;
+    border: dashed 5px rgba(0, 0, 255, .5);
+
+    grid-template-columns: 40px repeat(1, 1fr) 40px;
+
+
+    box-sizing: border-box;
+    display: grid;
+}
+
+#box-1 {
+    background-color: blue;
+}
+
+#box-2 {
+    background-color: orange;
+}
+
+#box-3 {
+    background-color: red;
+}
+
+#box-4 {
+    background-color: purple;
+}
+
+#box-5 {
+    background-color: green;
+}
+
+#box-6 {
+    background-color: aqua;
+}
+
+body > div {
+    display: grid;
+}
+
+body > div > p {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    justify-self: center;
+    align-self: center;
+}

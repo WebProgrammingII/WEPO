@@ -1,0 +1,121 @@
+/* CSS classes here should NOT be changed */
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway';
+}
+
+body {
+    padding: 20px;
+}
+
+.section > .flex-item {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section {
+    border: solid 1px rgba(155, 155, 155, .5);
+    display: flex;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.section > .flex-item:nth-child(1) { background-color: #FAEB4F; }
+.section > .flex-item:nth-child(2) { background-color: #ECB03D; }
+.section > .flex-item:nth-child(3) { background-color: #E07E30; }
+.section > .flex-item:nth-child(4) { background-color: #CD3D7F; }
+.section > .flex-item:nth-child(5) { background-color: #49A7DB; }
+.section > .flex-item:nth-child(6) { background-color: #00A72B; }
+
+.cartoon {
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+}
+
+.section-4 {
+    height: 120px;
+}
+
+.space-invader {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.green {
+    background-image: url('https://orig00.deviantart.net/7430/f/2016/077/2/e/space_invaders_by_flayh-d9vj7zr.png');
+}
+
+.purple {
+    background-image: url('http://www.pngmart.com/files/4/Space-Invaders-Transparent-Background.png');
+}
+
+.section-5 {
+    background-color: black;
+}
+
+.section-6 {
+    background-image: url('https://i.pinimg.com/originals/3b/d3/e7/3bd3e7fcf03935e331b008d1f9398f61.png'), url('http://rs17.pbsrc.com/albums/b98/Carlosnsp/NINTENDO/Renders/BackGround.png~c200'), url('https://static.giantbomb.com/uploads/square_medium/12/126726/1774729-sppbanzaibill.png'),
+    url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/0kjHIH6/animation-of-1980s-old-arcade-super-mario-bros-clouds-background_vywb1uvex__F0000.png');
+    background-size: 250px, 100px 100px, 100px 100px, cover;
+    background-repeat: no-repeat, repeat-x, no-repeat, no-repeat;
+    background-position: left bottom, left 105%, right 20px top 20px, 50% 65%;
+}
+
+.section-6 > .wario {
+    background-image: url('https://vignette.wikia.nocookie.net/fantendo/images/8/8e/WarioWLU.png/revision/latest?cb=20141103223728');
+}
+
+.section-6 > .bowser {
+    background-image: url('https://orig00.deviantart.net/a996/f/2016/266/b/c/an_kingly_transformation__king_bowser_koopa_tf__by_sharpe_fan-dainia8.png');
+}
+
+.section-6 > .luigi {
+    background-image: url('https://pre00.deviantart.net/35f2/th/pre/f/2012/129/e/8/i__m_a_luigi__number_one__by_blistinaorgin-d4xummm.png');
+}
+
+.section-6 > .peach {
+    background-image: url('https://pre00.deviantart.net/c765/th/pre/f/2014/092/5/5/super_paper_mario____classic_princess_peach_by_sindel545-d7ct91n.png');
+}
+
+.section-6 > .mario {
+    background-image: url('https://vignette.wikia.nocookie.net/mario/images/7/78/Tanooki_Mario_Artwork_-_Super_Mario_Bros._3.png/revision/latest?cb=20120518002849');
+}
+
+.section-7 > .carebear-red {
+    background-image: url('https://vignette.wikia.nocookie.net/carebears/images/3/34/Smart_Heart.gif/revision/latest?cb=20121016174246');
+}
+
+.section-7 > .carebear-blue {
+    background-image: url('https://www.askideas.com/media/79/Blue-Care-Bear-Wish-You-Good-Night.gif');
+}
+
+.section-7 > .carebear-green {
+    background-image: url('https://i.pinimg.com/originals/c8/7f/6c/c87f6c8201ef938e5afb3a2a9acd3b7f.gif');
+}
+
+.section-7 > .carebear-pink {
+    background-image: url('http://images.fanpop.com/images/image_uploads/Cheer-Care-Bear-care-bears-256383_200_244.gif');
+}
+
+.section-7 > .carebear-yellow {
+    background-image: url('https://freeclipartspot.com//storage/upload/care-bear-clip-art/care-bear-clip-art-36.png');
+}
+
+.section-7 {
+    background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/0kjHIH6/cute-and-puffy-cartoon-clouds-hovering-in-a-blue-sky_rekvphrx__F0000.png');
+    background-size: cover;
+    background-position: 50% 50%;
+}

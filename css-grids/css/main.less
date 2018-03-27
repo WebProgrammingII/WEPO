@@ -1,0 +1,209 @@
+@import "variables.less";
+
+html, body {
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway';
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Lato';
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 120px auto;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: @black;
+}
+
+.left-aside {
+    text-align: center;
+    background-color: @coral;
+    color: @white;
+    img {
+        width: 80px;
+    }
+}
+
+main {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "navigation"
+        "hero"
+        "banner"
+        "items"
+        "footer";
+    nav {
+        grid-area: navigation;
+        padding: 10px @paddingSides;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        align-items: center;
+        background-color: @darkTurquoise;
+        color: @white;
+        #logo {
+            font-size: 3em;
+            margin: 0;
+        }
+        ul {
+            justify-self: end;
+            align-self: end;
+            li {
+                display: inline-block;
+                font-size: 1.4em;
+                font-weight: bold;
+                margin: 0 10px;
+                a {
+                    color: @white;
+                    transition: color .5s;
+                    &:hover {
+                        color: darken(@white, 10%);
+                    }
+                }
+            }
+        }
+    }
+    section {
+        &#hero {
+            grid-area: hero;
+            display: grid;
+            grid-template-columns: 250px auto;
+            padding: @paddingSides;
+            align-items: center;
+            img {
+                width: 200px;
+                margin-right: 20px;
+            }
+        }
+        &#banner {
+            grid-area: banner;
+            background-color: @darkPink;
+            padding: 10px @paddingSides;
+            display: grid;
+            grid-template-columns: 150px auto;
+            align-items: center;
+            color: @white;
+            img {
+                width: 100px;
+            }
+        }
+    }
+    .items {
+        grid-area: items;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        li {
+            display: grid;
+            grid-template-columns: 120px auto;
+            align-items: center;
+            padding: @paddingSides;
+            .info {
+                background-image: url(../resources/info.png);
+                background-size: cover;
+                height: 80px;
+                width: 80px;
+            }
+            &:nth-child(odd) {
+                background-color: @moccasin;
+            }
+        }
+    }
+    footer {
+        grid-area: footer;
+        background-color: @darkTurquoise;
+        color: @white;
+        align-items: center;
+        padding: 10px @paddingSides;
+        h2 {
+            font-size: 2em;
+            margin: 0;
+        }
+    }
+}
+
+// Tablet
+@media screen and (max-width: 1024px) {
+    body {
+        grid-template-columns: auto;
+        font-size: .9em;
+    }
+    main {
+        grid-template-areas:
+            "navigation"
+            "hero"
+            "items"
+            "banner"
+            "footer";
+        .items {
+            grid-auto-flow: column;
+            grid-template-rows: repeat(3, auto);
+        }
+    }
+    .left-aside {
+        display: none;
+    }
+}
+
+// Mobile
+@media screen and (max-width: 450px) {
+    body {
+        font-size: .8em;
+    }
+    main {
+        grid-template-areas:
+            "navigation"
+            "hero"
+            "banner"
+            "items"
+            "footer";
+        nav {
+            grid-template-columns: auto;
+            justify-content: center;
+            text-align: center;
+            #logo {
+                margin: @paddingSides 0;
+            }
+        }
+        section {
+            &#hero {
+                grid-template-columns: auto;
+                text-align: center;
+                justify-items: center;
+            }
+        }
+        .items {
+            grid-auto-flow: row;
+            grid-template-columns: repeat(2, auto);
+            li {
+                &:first-child {
+                    grid-column: 1 / span 2;
+                }
+                &:last-child {
+                    grid-column: 1 / span 2;
+                }
+                &:not(:first-child):not(:last-child) {
+                    grid-template-columns: auto;
+                    padding: 20px;
+                    text-align: center;
+                    justify-items: center;
+                    .info {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,206 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwiPHA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v12/1Ptug8zYS_SKggPNyC0ISg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway Bold'), local('Raleway-Bold'), url(https://fonts.gstatic.com/s/raleway/v12/1Ptrg8zYS_SKggPNwJYtWqZPBQ.ttf) format('truetype');
+}
+html,
+body {
+  height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway';
+}
+body {
+  box-sizing: border-box;
+  font-family: 'Lato';
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 120px auto;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
+.left-aside {
+  text-align: center;
+  background-color: #FF8A5B;
+  color: #FFFFFF;
+}
+.left-aside img {
+  width: 80px;
+}
+main {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas: "navigation" "hero" "banner" "items" "footer";
+}
+main nav {
+  grid-area: navigation;
+  padding: 10px 40px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+  background-color: #25CED1;
+  color: #FFFFFF;
+}
+main nav #logo {
+  font-size: 3em;
+  margin: 0;
+}
+main nav ul {
+  justify-self: end;
+  align-self: end;
+}
+main nav ul li {
+  display: inline-block;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0 10px;
+}
+main nav ul li a {
+  color: #FFFFFF;
+  transition: color .5s;
+}
+main nav ul li a:hover {
+  color: #e6e6e6;
+}
+main section#hero {
+  grid-area: hero;
+  display: grid;
+  grid-template-columns: 250px auto;
+  padding: 40px;
+  align-items: center;
+}
+main section#hero img {
+  width: 200px;
+  margin-right: 20px;
+}
+main section#banner {
+  grid-area: banner;
+  background-color: #EA526F;
+  padding: 10px 40px;
+  display: grid;
+  grid-template-columns: 150px auto;
+  align-items: center;
+  color: #FFFFFF;
+}
+main section#banner img {
+  width: 100px;
+}
+main .items {
+  grid-area: items;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+main .items li {
+  display: grid;
+  grid-template-columns: 120px auto;
+  align-items: center;
+  padding: 40px;
+}
+main .items li .info {
+  background-image: url(../resources/info.png);
+  background-size: cover;
+  height: 80px;
+  width: 80px;
+}
+main .items li:nth-child(odd) {
+  background-color: #FCEADE;
+}
+main footer {
+  grid-area: footer;
+  background-color: #25CED1;
+  color: #FFFFFF;
+  align-items: center;
+  padding: 10px 40px;
+}
+main footer h2 {
+  font-size: 2em;
+  margin: 0;
+}
+@media screen and (max-width: 1024px) {
+  body {
+    grid-template-columns: auto;
+    font-size: .9em;
+  }
+  main {
+    grid-template-areas: "navigation" "hero" "items" "banner" "footer";
+  }
+  main .items {
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto);
+  }
+  .left-aside {
+    display: none;
+  }
+}
+@media screen and (max-width: 450px) {
+  body {
+    font-size: .8em;
+  }
+  main {
+    grid-template-areas: "navigation" "hero" "banner" "items" "footer";
+  }
+  main nav {
+    grid-template-columns: auto;
+    justify-content: center;
+    text-align: center;
+  }
+  main nav #logo {
+    margin: 40px 0;
+  }
+  main section#hero {
+    grid-template-columns: auto;
+    text-align: center;
+    justify-items: center;
+  }
+  main .items {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, auto);
+  }
+  main .items li:first-child {
+    grid-column: 1 / span 2;
+  }
+  main .items li:last-child {
+    grid-column: 1 / span 2;
+  }
+  main .items li:not(:first-child):not(:last-child) {
+    grid-template-columns: auto;
+    padding: 20px;
+    text-align: center;
+    justify-items: center;
+  }
+  main .items li:not(:first-child):not(:last-child) .info {
+    margin-bottom: 20px;
+  }
+}
